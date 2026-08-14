@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0f172a">
+  <title>TodoFlow</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="todo-card" aria-label="Todo application">
+      <header class="app-header">
+        <div><p class="eyebrow">Stay organized</p><h1>TodoFlow</h1><p class="subtitle">Plan your day, one task at a time.</p></div>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="Toggle theme" title="Toggle theme">☀️</button>
+      </header>
+      <form id="todoForm" class="add-form">
+        <label class="sr-only" for="todoInput">Add a task</label>
+        <input id="todoInput" type="text" maxlength="120" placeholder="What needs to be done?" autocomplete="off" required>
+        <button type="submit" class="add-btn">Add</button>
+      </form>
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" type="button">All</button>
+          <button class="filter" data-filter="active" type="button">Active</button>
+          <button class="filter" data-filter="completed" type="button">Completed</button>
+        </div>
+        <button id="clearCompleted" class="text-btn" type="button">Clear completed</button>
+      </div>
+      <ul id="todoList" class="todo-list" aria-live="polite"></ul>
+      <footer class="app-footer"><span id="taskCount">0 tasks left</span><span>Saved automatically</span></footer>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
